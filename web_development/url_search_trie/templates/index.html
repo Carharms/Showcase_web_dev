@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trie Search</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-container form {
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-right: 10px;
+            border: 2px solid #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #000;
+            color: white;
+            cursor: pointer;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <h1>Trie Search</h1>
+
+    <!-- Search form -->
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="text" class="input" placeholder="Search" name="q" id="search-box">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

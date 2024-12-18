@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            line-height: 2.0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center; /* Fixed typo here from "cent" to "center" */
+            border-bottom: 5px solid #ddd;
+            color: #333;
+        }
+
+        th {
+            background-color: #000;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #888;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Search Term: {{ query }}</h1>
+
+    {% if results %}
+<table>
+    <thead>
+        <tr>
+            <th>Word</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, url in results %}
+        <tr>
+            <td>{{ key }}</td>
+            <td><a href="{{ url }}" target="_blank">{{ url }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    {% else %}
+        <p class="no-results">No results found for your search.</p>
+    {% endif %}
+
+    <div class="back-button">
+        <a href="/">Back to Search</a>
+    </div>
+</body>
+</html>
